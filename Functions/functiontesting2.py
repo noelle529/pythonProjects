@@ -59,7 +59,7 @@ def calculatorApp():
 
         again = input('Do you want to run this program again?')
         print('Answer: Y ')
-        if again == ('Y'):
+        if again == ('Y'.upper):
             calculatorApp()
         else:
             print('Goodbye, See you later')
