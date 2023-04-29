@@ -34,11 +34,15 @@ def growth_decay_app():
 
     r2 = input('what is the rate of growth or decay?')#rate of growth or decay can be changed
     t = input('how long in years?') # time
-    x = float(a) * r + float(r2) # total of intial amount + rate
-
-    total = pow(x,float(t)) #this variable returns the base raise to the power of exponent.
+    growth_decay = input('Do you want growth or decay?')
+    print('Answer: G or D')
+    x1 = float(a) * r + float(r2) # growth
+    x2 = float(a) * r - float(r2) # decay
+    if growth_decay == 'G':
+        total = pow(x1,float(t))
+    elif growth_decay == 'D':
+        total = pow(x2,float(t))
     print(total)
-
 
 def calculatorApp():
    
@@ -63,4 +67,5 @@ def calculatorApp():
             calculatorApp()
         else:
             print('Goodbye, See you later')
+
 calculatorApp()
