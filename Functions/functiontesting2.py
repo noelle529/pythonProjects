@@ -1,3 +1,4 @@
+import sys
 import cmath
 """ a = 5.0
     b = -5.0
@@ -40,19 +41,26 @@ def growth_decay_app():
 
 
 def calculatorApp():
-    print(''' 
-        Slope App : '1'
-        Quadaric: '2'
-        Growth and decay: '3'
-    ''')
-    calc_again = input('''Which math formula do you want to use?''')
-    if calc_again == '1':
-        slopeApp()
-    elif calc_again == ('2'):
-        quadApp()
-    elif calc_again == ('3'):
-        growth_decay_app()
-    else:
-        calculatorApp()
+   
+        print(''' 
+            Slope App : '1'
+            Quadaric: '2'
+            Growth and decay: '3'
+        ''')
+        calc_again = input('''Which math formula do you want to use?''')
+        if calc_again == '1':
+            slopeApp()
+        elif calc_again == ('2'):
+            quadApp()
+        elif calc_again == ('3'):
+            growth_decay_app()
+        else:
+            calculatorApp()
 
+        again = input('Do you want to run this program again?')
+        print('Answer: Y ')
+        if again == ('Y'):
+            calculatorApp()
+        else:
+            print('Goodbye, See you later')
 calculatorApp()
