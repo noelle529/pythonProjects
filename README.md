@@ -15,5 +15,5 @@ Control flow statements are used to control the execution of code based on certa
 
 Temperature Converter a program that converts temperatures between Celsius and Fahrenheit. Use variables to store the temperature value and whether it is in Celsius or Fahrenheit, and use if/else statements to handle the conversion.
 
-##Function
+## Function
 A function is a block of code that performs a specific task. Functions in Python are defined using the def keyword followed by the function name and parentheses. Any parameters that the function takes are placed inside the parentheses. The function then returns a value or performs some action. I have 
