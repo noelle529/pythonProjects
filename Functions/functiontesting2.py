@@ -27,12 +27,31 @@ def slopeApp():
     total = (float(yTwo)-float(yOne))/(float(xTwo)- float(xOne))
     print(total)
 
+def growth_decay_app():
+    a = input('what is the starting amount?') #the inital amount
+    r = 1.0  #rate calculation(growth) : to make DECAY change "addtion" symbol to "subtraction" 
+
+    r2 = input('what is the rate of growth or decay?')#rate of growth or decay can be changed
+    t = input('how long in years?') # time
+    x = float(a) * r + float(r2) # total of intial amount + rate
+
+    total = pow(x,float(t)) #this variable returns the base raise to the power of exponent.
+    print(total)
+
+
 def calculatorApp():
-    calc_again = input('''Do you want use the Slope App or Quadaric App?''')
-    if calc_again == 'Slope':
+    print(''' 
+        Slope App : '1'
+        Quadaric: '2'
+        Growth and decay: '3'
+    ''')
+    calc_again = input('''Which math formula do you want to use?''')
+    if calc_again == '1':
         slopeApp()
-    elif calc_again == ('Quadaric'):
+    elif calc_again == ('2'):
         quadApp()
+    elif calc_again == ('3'):
+        growth_decay_app()
     else:
         calculatorApp()
 
