@@ -36,12 +36,15 @@ def growth_decay_app():
     t = input('how long in years?') # time
     growth_decay = input('Do you want growth or decay?')
     print('Answer: G or D')
-    x1 = float(a) * r + float(r2) # growth
-    x2 = float(a) * r - float(r2) # decay
+    rate = float(r) + float(r2)
+    amount = float(a) * rate
+   # x1 = float(a) * r + float(r2) # growth
+    #x2 = float(a) * r - float(r2) # decay
+
     if growth_decay == 'G':
-        total = pow(x1,float(t))
+        total = pow(amount,float(t))
     elif growth_decay == 'D':
-        total = pow(x2,float(t))
+        total = pow(amount,float(t))
     print(total)
 
 def calculatorApp():
