@@ -1,10 +1,35 @@
-# Rock, Paper, Scissors
-userInput = input('What are you going to throw?')
+#rock paper scissors app
+import random
 
-computerInput = ['rock', 'paper', 'scissor']
+userInput = input('Enter a choice [rock/paper/scissor]: ')
 
-if userInput != 'rock' or 'paper' or 'scissor':
-    print('Please enter a valid entire')
-else:
-    
-    print(userInput)
+possibleActions = ['rock', 'paper', 'scissor']
+computerAction = random.choice(possibleActions)
+print('Computer chooses: ' + str(computerAction))
+
+
+def game():
+    while True:
+        if userInput == computerAction:
+            print('It is a draw.')
+        elif userInput == 'rock':
+            if computerAction == 'scissor':
+                print('You win!')
+            else: 
+                print('Paper covers rock. You lose.')
+        elif userInput == 'paper':
+            if computerAction == 'rock':
+                print('You win!')
+            else: 
+                print('Scissors cuts paper. You lose.')
+        elif userInput == 'scissor':
+            if computerAction == 'paper':
+                print('You win!')
+            else: 
+                print('Rock smashes scissor. You lose.')
+
+            playAgain = input('Play again? [y/n]: ')
+            if playAgain.lower() != 'y':
+                break
+            else:
+                game()
