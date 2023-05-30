@@ -14,13 +14,6 @@ def listSorter():
     minList = min(numList)
     print('The smallest number is: ' + str(minList))
 
-    for num in numList[0:-1]:
-        if num % 2 == 0:
-            print('Even numbers are: '+ str(num))
-    
-    reversedList = reversed_list(numList)
-    print(reversedList)
-
     removeDuplicates = list(set(numList))
     print('No repeats: ' + str(removeDuplicates))
 
@@ -34,5 +27,4 @@ try:
 
 except ValueError:
 	print("Invalid input. Please enter a valid number or 'done'.")
-    
-        
+

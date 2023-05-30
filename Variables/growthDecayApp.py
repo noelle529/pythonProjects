@@ -5,15 +5,15 @@ r2 = input('what is the rate of growth or decay?')#rate of growth or decay can b
 t = input('how long in years?') # time
 growth_decay = input('Do you want growth or decay?')
 print('Answer: G or D')
-x1 = float(a) * r + float(r2) # total of intial amount + rate (growth)
-x2 = float(a) * r - float(r2) # decay
+rate = float(r) + float(r2)
+amount = float(a) * rate
+# x1 = float(a) * r + float(r2) # growth
+#x2 = float(a) * r - float(r2) # decay
 
-# total = pow(x,float(t)) #this variable returns the base raise to the power of exponent.
 if growth_decay == 'G':
-    total = pow(x1,float(t))
+    total = pow(amount,float(t))
 elif growth_decay == 'D':
-    total = pow(x2,float(t))
-
+    total = pow(amount,float(t))
 print(total)
 
 
