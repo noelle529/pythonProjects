@@ -1,42 +1,52 @@
-Noelle = ['purple','tarot cards','kingdom hearts']
-teacher = [['science', 'biology','pizza','tea','section 6'],[1,2,3,4,5]]
-#print('I am teacher and I teach: ' + teacher[0][1] + ' I also like to play video games and my favorite one is ' + Noelle[2]) 
+import sys
 
-#when something has two list use index number to select which list
-if 'biology' in teacher[0]:  
-    print('true')
+class ToDoList:
+    def __init__(self):
+        self.tasks = []
 
-#iterate over list   
-for i in Noelle:
-    print(i)
+    def add_task(self):
+        userInput = input('What task are you adding? ')
+        self.tasks.append(userInput)
+        print('Task added')
 
-#practical use
-supplies = ['pens', 'pencils','Scissors','post-it-notes','markers','crayons','rulers']
-for supplyList in range(len(supplies)):
-    print('Index: ' + str(supplyList) + ' in supplies list is: ' + supplies[supplyList])
+    def remove_task(self):
+        remove_task = input('What task are you removing? Remember spelling counts!!! ')
+        if remove_task in self.tasks:
+            self.tasks.remove(remove_task)
+            print('Task removed')
+        else:
+            print('Task not found')
 
-#multiple assignments
-color, magic, hobby = Noelle
-print(color + magic + hobby)
+    def display_tasks(self):
+        print("To-Do List:")
+        for display in self.tasks:
+            print("- " + display)
 
-catNames = []
+    def to_do(self):
+        print('''
+        1 = Add task
+        2 = Remove task
+        3 = Display tasks
+        4 = Exit program''')
+        ask_user = input('Select an option: ')
+        menu_options = {
+            '1': self.add_task,
+            '2': self.remove_task,
+            '3': self.display_tasks,
+            '4': sys.exit
+        }
 
-while True:
-    print('Enter the name of a cat' + str(len(catNames)+ 1) + '(Or enter nothing to stop)')
-    name = input()
-    if  name == '':
-        break
-    catNames = catNames + [name] # list concatenation
-print('The cat names are: ')
-for name in catNames:
-    print('   ' + name)
+        try:
+            menu_options.get(ask_user, lambda: print('Invalid option'))()
+        except Exception as e:
+            print('An error occurred:', str(e))
 
-# loop supplies
-# school supplies
+    def start(self):
+        while True:
+            self.to_do()
 
-supplies = ['pens', 'scissors','paper','binders','staplers']
+if __name__ == '__main__':
+    todo_list = ToDoList()
+    todo_list.start()
 
-for i in range(len(supplies)):
-    print('Index: ' + str(i) + ' in supplies is: ' + supplies[i])
 
-# is adding a ask to add supplies and add to current list
